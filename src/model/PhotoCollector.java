@@ -35,16 +35,16 @@ public class PhotoCollector {
 
 		boolean find = false;
 
-		if(!find){
-			Album album = new Album(tit, numPages, numPics, aType);
+		if(tit != null && tit != "" && (!find)){
+			Album albunes = new Album(tit, numPages, numPics, aType);
 
-			for(int i = 0; i<MAX_ALBUMS && !find; i++){
+			for(int i = 0; i<albums.length && !find; i++){
 				if(albums[i] == null){
-				albums[i] = album;
-				find = true;
+					albums[i] = albunes;
+					find = true;
+					numAlbums++;
 				}
 			}
-			numAlbums++;
 		}	
 	}
 
